@@ -28,10 +28,13 @@ public class Calculator {
 
     private String currencyFormat(double splitAmountToPay) {
         int amount = (int)Math.floor(splitAmountToPay);
-        switch (amount) {
+        int lastDigit = (amount % 10);
+        switch (lastDigit) {
             case 1:
                 return "рубль";
-            case 2|3|4:
+            case 2:
+            case 3:
+            case 4:
                 return "рубля";
             default:
                 return "рублей";
